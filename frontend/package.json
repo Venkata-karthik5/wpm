@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "render-build": "ng build --configuration production",
+    "render-build": "node -e \"require('fs').writeFileSync('public/config.js', `window.__API_BASE__='${process.env.API_BASE||''}';`)\" && ng build --configuration production",
     "render-start": "npx http-server ./dist/frontend/browser -p $PORT --proxy http://localhost:$PORT? --cors"
   },
   "prettier": {
