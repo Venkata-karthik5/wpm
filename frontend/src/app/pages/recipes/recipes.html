@@ -1,0 +1,15 @@
+<div class="space-y-4">
+  <h2 class="text-xl font-semibold">Recipes</h2>
+  <form (ngSubmit)="search()" class="flex gap-2">
+    <input class="border rounded px-2 py-1 flex-1" placeholder="Search by title" [(ngModel)]="q" name="q" />
+    <input class="border rounded px-2 py-1 flex-1" placeholder="Filter by ingredient" [(ngModel)]="ingredient" name="ingredient" />
+    <button class="bg-gray-800 text-white px-3 py-1 rounded" type="submit">Search</button>
+  </form>
+  <div class="grid md:grid-cols-2 gap-4">
+    <div class="border rounded p-3" *ngFor="let r of items">
+      <h3 class="font-medium text-lg"><a [routerLink]="['/recipes', r._id]">{{ r.title }}</a></h3>
+      <p class="text-sm text-gray-600">{{ r.description }}</p>
+      <div class="text-xs text-gray-500">Ingredients: {{ r.ingredients?.join(', ') }}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="max-w-xl space-y-3">
+  <h2 class="text-xl font-semibold">Create Recipe</h2>
+  <form (ngSubmit)="submit()" class="space-y-3">
+    <input class="border rounded px-2 py-1 w-full" name="title" [(ngModel)]="title" placeholder="Title" />
+    <textarea class="border rounded px-2 py-1 w-full" name="description" [(ngModel)]="description" placeholder="Description"></textarea>
+    <input class="border rounded px-2 py-1 w-full" name="ingredients" [(ngModel)]="ingredientsRaw" placeholder="Ingredients (comma separated)" />
+    <textarea class="border rounded px-2 py-1 w-full" name="steps" [(ngModel)]="stepsRaw" placeholder="Steps (one per line)"></textarea>
+    <button class="bg-green-600 text-white px-3 py-1 rounded" type="submit">Create</button>
+  </form>
+  <div class="text-sm text-gray-600">You must be logged in to post.</div>
+</div>

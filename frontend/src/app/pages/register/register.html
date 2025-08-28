@@ -1,0 +1,9 @@
+<div class="max-w-sm space-y-3">
+  <h2 class="text-xl font-semibold">Register</h2>
+  <form (ngSubmit)="submit()" class="space-y-2">
+    <input class="border rounded px-2 py-1 w-full" name="username" [(ngModel)]="username" placeholder="Username" />
+    <input class="border rounded px-2 py-1 w-full" name="email" [(ngModel)]="email" placeholder="Email" />
+    <input class="border rounded px-2 py-1 w-full" type="password" name="password" [(ngModel)]="password" placeholder="Password" />
+    <button class="bg-green-600 text-white px-3 py-1 rounded" type="submit">Create Account</button>
+  </form>
+</div>
