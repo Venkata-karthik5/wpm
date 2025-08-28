@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: recipe-backend
+    env: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install && npm run render-build
+    startCommand: npm run render-start
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: MONGO_DB
+        value: recipesocial
+      - key: JWT_SECRET
+        sync: false
+  - type: web
+    name: recipe-frontend
+    env: node
+    rootDir: frontend
+    plan: free
+    buildCommand: npm install && npm run render-build
+    startCommand: npm run render-start
+    envVars:
+      - key: API_BASE
+        fromService:
+          type: web
+          name: recipe-backend
+          property: url
+
+

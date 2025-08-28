@@ -1,13 +1,14 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpHeaders, provideHttpClient, withInterceptors } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class Api {
   private http = inject(HttpClient);
-  private baseUrl = 'http://localhost:4000/api';
+  private baseUrl = environment.apiBase;
 
   private getAuthHeaders() {
     const token = localStorage.getItem('token');

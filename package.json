@@ -1,4 +1,13 @@
 {
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "render-build": "npm --prefix backend run render-build && npm --prefix frontend run render-build",
+    "render-start": "npm --prefix backend run render-start"
+  }
+}
+
+{
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
